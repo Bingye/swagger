@@ -1,0 +1,18 @@
+package com.bingye.swagger.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+
+@Configuration
+@ComponentScan(basePackages = {"com.bingye.swagger.web"})
+public class SwaggerConfig {
+
+    @Bean
+    public Docket customDocket(){
+        return new Docket(DocumentationType.OAS_30).select().build();
+    }
+
+}
